@@ -1,0 +1,7 @@
+
+State Machine - |alarme|sequenceur:u1|CURRENT_STATE
+Name CURRENT_STATE.alarme_declenchee CURRENT_STATE.saisie_code CURRENT_STATE.alarme_activee CURRENT_STATE.repos 
+CURRENT_STATE.repos 0 0 0 0 
+CURRENT_STATE.alarme_activee 0 0 1 1 
+CURRENT_STATE.saisie_code 0 1 0 1 
+CURRENT_STATE.alarme_declenchee 1 0 0 1 

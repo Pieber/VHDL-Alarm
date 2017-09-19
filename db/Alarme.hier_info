@@ -1,0 +1,99 @@
+|Alarme
+clk => sequenceur:u1.clk
+clk => counttimer:u2.clk
+code => sequenceur:u1.code
+bouton_ON => sequenceur:u1.bouton_ON
+capteur_mouvement => sequenceur:u1.capteur_mouvement
+capteur_position => sequenceur:u1.capteur_position
+alarme_sonore <= sequenceur:u1.alarme_sonore
+gyrophare <= sequenceur:u1.gyrophare
+led1 <= counttimer:u2.led1
+led2 <= sequenceur:u1.led2
+
+
+|Alarme|sequenceur:u1
+clk => CURRENT_STATE~1.DATAIN
+code => NEXT_STATE.OUTPUTSELECT
+code => NEXT_STATE.OUTPUTSELECT
+code => Selector0.IN3
+code => Selector3.IN2
+count_sortie => NEXT_STATE.DATAA
+count_sortie => led2.IN0
+count_sortie => NEXT_STATE.DATAA
+bouton_ON => Selector1.IN3
+bouton_ON => Selector0.IN1
+capteur_mouvement => NEXT_STATE.DATAA
+capteur_mouvement => NEXT_STATE.DATAA
+capteur_position => NEXT_STATE.OUTPUTSELECT
+capteur_position => NEXT_STATE.OUTPUTSELECT
+capteur_position => Selector3.IN3
+count_entree <= count_entree.DB_MAX_OUTPUT_PORT_TYPE
+alarme_sonore <= alarme_sonore.DB_MAX_OUTPUT_PORT_TYPE
+gyrophare <= gyrophare.DB_MAX_OUTPUT_PORT_TYPE
+led2 <= led2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Alarme|counttimer:u2
+clk => q[0].CLK
+clk => q[1].CLK
+clk => q[2].CLK
+clk => q[3].CLK
+clk => q[4].CLK
+clk => q[5].CLK
+clk => q[6].CLK
+clk => q[7].CLK
+clk => q[8].CLK
+clk => q[9].CLK
+clk => q[10].CLK
+clk => q[11].CLK
+clk => q[12].CLK
+clk => q[13].CLK
+clk => q[14].CLK
+clk => q[15].CLK
+clk => q[16].CLK
+clk => q[17].CLK
+clk => q[18].CLK
+clk => q[19].CLK
+clk => q[20].CLK
+clk => q[21].CLK
+clk => q[22].CLK
+clk => q[23].CLK
+clk => q[24].CLK
+clk => q[25].CLK
+clk => q[26].CLK
+clk => q[27].CLK
+clk => q[28].CLK
+count_entree => led1.DATAIN
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_entree => q.OUTPUTSELECT
+count_sortie <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+led1 <= count_entree.DB_MAX_OUTPUT_PORT_TYPE
+
+
